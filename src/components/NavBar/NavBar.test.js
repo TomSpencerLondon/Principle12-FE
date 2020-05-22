@@ -7,5 +7,5 @@ afterEach(cleanup);
 
 it('should render the navbar', () => {
   const { getByText } = render(<NavBar />);
-  getByText('Retropolis');
+  getByText('Principle12');
 });
