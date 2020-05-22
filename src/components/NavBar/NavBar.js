@@ -7,7 +7,7 @@ const NavBar = () => (
   <AppBar position="static" style={{ marginBottom: '10px' }}>
     <Toolbar>
       <Typography variant="h6">
-        Retropolis
+        Principle12
       </Typography>
     </Toolbar>
   </AppBar>
