@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index.js',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_URL': JSON.stringify('http://localhost:5000'),
+      'process.env.API_URL': JSON.stringify('http://localhost:3000/api'),
       'process.env.GOOGLE_AUTH_CLIENT_ID': JSON.stringify(process.env.GOOGLE_AUTH_CLIENT_ID)
     }),
     new HtmlWebpackPlugin({
@@ -19,8 +19,9 @@ module.exports = {
   ],
   devServer: {
     proxy: {
-      '/': {
-        target: 'http://localhost:5000'
+      '/api': {
+        target: 'http://localhost:5000',
+        pathRewrite: { '^/api': '' }
       }
     }
   },
