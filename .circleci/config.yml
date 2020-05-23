@@ -25,6 +25,11 @@ jobs:
 
       - run: yarn build:prod
 
+      - run:
+          name: Send to codecov
+          command: |
+            bash <(curl -s https://codecov.io/bash) -Z
+
 
   deploy:
     docker:
