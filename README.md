@@ -1,5 +1,4 @@
-# Principle12-FE [![codurance](https://circleci.com/gh/codurance/Retropolis-FE.svg?style=shield)](https://github.com/codurance/Retropolis-FE) [![Known Vulnerabilities](https://snyk.io/test/github/codurance/Retropolis-FE/badge.svg?targetFile=package.json)](https://snyk.io/test/github/codurance/Retropolis-FE?targetFile=package.json)
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/TomSpencerLondon/Principle12-FE/master.svg?style=flat-square)](https://codecov.io/gh/TomSpencerLondon/Principle12-FE/)
+# Principle12-FE [![codurance](https://circleci.com/gh/codurance/Retropolis-FE.svg?style=shield)](https://github.com/codurance/Retropolis-FE) [![Known Vulnerabilities](https://snyk.io/test/github/codurance/Retropolis-FE/badge.svg?targetFile=package.json)](https://snyk.io/test/github/codurance/Retropolis-FE?targetFile=package.json) [![Codecov Coverage](https://img.shields.io/codecov/c/github/TomSpencerLondon/Principle12-FE/master.svg?style=flat-square)](https://codecov.io/gh/TomSpencerLondon/Principle12-FE/)
 
 
 The front end of the Retropolis application. This is the final project for the apprentices Mar-May-2020.
