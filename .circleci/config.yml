@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Send to codecov
           command: |
-            bash <(curl -s https://codecov.io/bash) -Z
+            bash <(./node_modules/.bin/codecov --token=CODECOV_TOKEN) -Z
 
 
   deploy:
