@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  codecov: lebaptiste/codecov@0.1.0
 jobs:
   test:
     docker:
@@ -24,12 +26,6 @@ jobs:
       - run: yarn test
 
       - run: yarn build:prod
-
-      - run:
-          name: Send to codecov
-          command: |
-            ./node_modules/.bin/codecov --token=$CODECOV_TOKEN
-
 
   deploy:
     docker:
