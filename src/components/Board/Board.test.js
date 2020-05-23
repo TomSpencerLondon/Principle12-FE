@@ -31,12 +31,12 @@ it('shows three columns', async () => {
   });
 });
 
-// it('should return error message when response fails', async () => {
-//   setFail(true);
-//   await act(async () => {
-//     const { getByText } = renderBoard();
-//     await waitFor(() => {
-//       getByText('Sorry something went wrong...');
-//     });
-//   });
-// });
+it('should return error message when response fails', async () => {
+  setFail(true);
+  await act(async () => {
+    const { getByText } = renderBoard();
+    await waitFor(() => {
+      getByText('Sorry something went wrong...');
+    });
+  });
+});
