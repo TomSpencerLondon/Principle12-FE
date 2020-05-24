@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  codecov: lebaptiste/codecov@0.1.0
+  codecov: codecov/codecov@1.0.2
 jobs:
   test:
     docker:
@@ -60,6 +60,11 @@ jobs:
       - run: yarn test
 
       - run: yarn build:prod
+
+      - run: yarn test:coverage
+
+      - codecov/upload:
+          file: ./coverage/coverage-final.json
 
       - run: aws s3 sync build/ s3://principle12-fe
 
