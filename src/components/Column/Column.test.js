@@ -38,15 +38,15 @@ it('should render one card in column', () => {
   getByText(title);
 });
 
-it('should render add card button', () => {
-  const title = 'Add a card';
-  const { getByText } = renderColumn({ title });
-  getByText(title);
-});
-
-it('should render a form when add card button is clicked', () => {
-  const { getByText, getAllByText } = renderColumn();
-  const cardButton = getByText('Add a card');
-  cardButton.click();
-  getAllByText('Enter a title for this card...');
-});
+// it('should render add card button', () => {
+//   const title = 'Add a card';
+//   const { getByText } = renderColumn({ title });
+//   getByText(title);
+// });
+//
+// it('should render a form when add card button is clicked', () => {
+//   const { getByText, getAllByText } = renderColumn();
+//   const cardButton = getByText('Add a card');
+//   cardButton.click();
+//   getAllByText('Enter a title for this card...');
+// });

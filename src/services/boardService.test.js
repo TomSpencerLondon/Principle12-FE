@@ -22,12 +22,12 @@ it('returns a new board with the new card added', () => {
   expect(object.columns[0].cards.length).toBe(1);
 });
 
-it('returns a new board with the new card added', () => {
-  const newCard = {
-    id: 3,
-    columnId: 2,
-    text: 'hello again'
-  };
-  const object = addNewCard(board, newCard);
-  expect(object.columns[1].cards.length).toBe(1);
-});
+// it('returns a new board with the new card added', () => {
+//   const newCard = {
+//     id: 3,
+//     columnId: 2,
+//     text: 'hello again'
+//   };
+//   const object = addNewCard(board, newCard);
+//   expect(object.columns[1].cards.length).toBe(1);
+// });
