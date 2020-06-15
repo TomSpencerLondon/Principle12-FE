@@ -1,4 +1,4 @@
-# Principle12-FE [![codurance](https://circleci.com/gh/codurance/Retropolis-FE.svg?style=shield)](https://github.com/codurance/Retropolis-FE) [![Known Vulnerabilities](https://snyk.io/test/github/codurance/Retropolis-FE/badge.svg?targetFile=package.json)](https://snyk.io/test/github/codurance/Retropolis-FE?targetFile=package.json) [![codecov](https://codecov.io/gh/TomSpencerLondon/Principle12-FE/branch/master/graph/badge.svg)](https://codecov.io/gh/TomSpencerLondon/Principle12-FE)
+# Principle12-FE [![codurance](https://circleci.com/gh/TomSpencerLondon/Principle12-FE.svg?style=shield)](https://github.com/TomSpencerLondon/Principle12-FE) [![Known Vulnerabilities](https://snyk.io/test/github/TomSpencerLondon/Principle12-FE/badge.svg?targetFile=package.json)](https://snyk.io/test/github/TomSpencerLondon/Principle12-FE?targetFile=package.json) [![codecov](https://codecov.io/gh/TomSpencerLondon/Principle12-FE/branch/master/graph/badge.svg)](https://codecov.io/gh/TomSpencerLondon/Principle12-FE)
 
 
 The front end of the Retropolis application. This is the final project for the apprentices Mar-May-2020.
@@ -45,5 +45,5 @@ You can run the pre-push script to make sure you are ready to open a PR  `yarn p
 > **Note:** You can use `npm` instead of `yarn`
 
 ### Documentation
-Retropolis-FE documentation is available [here](https://github.com/codurance/Retropolis-FE/wiki).
+Principle12-FE documentation is available [here](https://github.com/TomSpencerLondon/Principle12-FE/wiki).
 

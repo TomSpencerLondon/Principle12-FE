@@ -9,21 +9,18 @@ module.exports = {
   entry: './src/index.js',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_URL': JSON.stringify('http://localhost:3000/api'),
+      'process.env.API_URL': JSON.stringify('http://localhost:5000'),
       'process.env.GOOGLE_AUTH_CLIENT_ID': JSON.stringify(process.env.GOOGLE_AUTH_CLIENT_ID)
     }),
     new HtmlWebpackPlugin({
+      title: 'Retropolis',
       template: 'public/index.html',
       favicon: './public/favicon.ico'
     })
   ],
   devServer: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
-        pathRewrite: { '^/api': '' }
-      }
-    }
+    port: 3000,
+    historyApiFallback: true
   },
   module: {
     rules: [

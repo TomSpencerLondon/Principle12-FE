@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 import * as PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { failLogin, successLogin } from '../../services/loginService';
+import { failLogin, successLogin, redirectAfterLogin } from '../../services/loginService';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -12,12 +12,12 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const Login = ({ setAuth }) => {
+const Login = ({ history }) => {
   const classes = useStyles();
 
   const success = (res) => {
     successLogin(res);
-    setAuth(true);
+    redirectAfterLogin(history);
   };
 
   return (
@@ -34,8 +34,13 @@ const Login = ({ setAuth }) => {
   );
 };
 
+const history = PropTypes.shape({
+  push: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired
+});
+
 Login.propTypes = {
-  setAuth: PropTypes.func.isRequired
+  history: history.isRequired
 };
 
 export default Login;

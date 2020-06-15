@@ -5,14 +5,30 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import * as PropTypes from 'prop-types';
-import CardItem from '../CardItem/CardItem';
-import CardForm from '../CardForm/CardForm';
+import { makeStyles } from '@material-ui/core/styles';
+import CardContainer from '../Card/CardContainer';
+import AddCardForm from '../CardForm/AddCardForm';
 
-const Column = ({ columnProp, addNewCardToBoard }) => {
+const useStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: '#f6f5f5'
+  },
+  addNewCardButton: {
+    textTransform: 'capitalize'
+  },
+  cardFooter: {
+    marginTop: '15px'
+  }
+}));
+
+const Column = ({
+  columnProp, addNewCardToBoard, editCardToBoard, deleteCardFromBoard
+}) => {
+  const classes = useStyles();
   const [cardFormEdit, setCardFormEdit] = useState(false);
   const renderForm = () => (cardFormEdit
     ? (
-      <CardForm
+      <AddCardForm
         handleCancelButton={setCardFormEdit}
         handleAddCard={addNewCardToBoard}
         colId={columnProp.id}
@@ -21,7 +37,7 @@ const Column = ({ columnProp, addNewCardToBoard }) => {
     : (
       <Button
         onClick={() => setCardFormEdit(!cardFormEdit)}
-        style={{ textTransform: 'capitalize' }}
+        className={classes.addNewCardButton}
         size="medium"
         startIcon={<AddIcon />}
       >
@@ -29,15 +45,22 @@ const Column = ({ columnProp, addNewCardToBoard }) => {
       </Button>
     ));
   return (
-    <Card style={{ backgroundColor: '#f6f5f5' }}>
+    <Card className={classes.root}>
       <CardContent>
         <Typography variant="h5" gutterBottom>
           {columnProp.title}
         </Typography>
 
-        {columnProp.cards.map((card) => <CardItem key={card.id} cardProp={card} />)}
+        {columnProp.cards.map((card) => (
+          <CardContainer
+            key={card.id}
+            cardProp={card}
+            editCardToBoard={editCardToBoard}
+            handleDeleteCard={deleteCardFromBoard}
+          />
+        ))}
 
-        <div style={{ marginTop: '15px' }}>
+        <div className={classes.cardFooter}>
           {renderForm()}
         </div>
       </CardContent>
@@ -53,7 +76,9 @@ const columnType = PropTypes.shape({
 
 Column.propTypes = {
   columnProp: columnType.isRequired,
-  addNewCardToBoard: PropTypes.func.isRequired
+  addNewCardToBoard: PropTypes.func.isRequired,
+  editCardToBoard: PropTypes.func.isRequired,
+  deleteCardFromBoard: PropTypes.func.isRequired
 };
 
 export default Column;

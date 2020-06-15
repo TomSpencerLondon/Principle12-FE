@@ -14,12 +14,16 @@ function renderColumn(args) {
         {
           id: 1,
           columnId: 1,
-          text: 'Any text'
+          text: 'Any text',
+          author: 'John doe',
+          haveVoted: false,
+          totalVoters: 0
         }
       ]
     },
-    addNewCardToBoard: () => {
-    }
+    addNewCardToBoard: () => {},
+    deleteCardFromBoard: () => {},
+    editCardToBoard: () => {}
   };
 
   const props = { ...defaultProps, ...args };

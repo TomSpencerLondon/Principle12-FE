@@ -2,21 +2,29 @@ import React from 'react';
 import { jest, it, beforeEach } from '@jest/globals';
 import { act, render, waitFor } from '@testing-library/react';
 import Board from './Board';
-import { setFail } from '../../api/__mocks__/mockHelper';
+import { setFail, setMockResponse } from '../../api/__mocks__/mockHelper';
+
+const dummyData = require('../../api/__mocks__/boardsApiMockResponse.json');
 
 jest.mock('../../api/boardsApi');
 
 beforeEach(() => {
   setFail(false);
+  setMockResponse(dummyData);
 });
 
 function renderBoard(args) {
   const defaultProps = {
-    setAuth: () => {}
+    history: {
+      push: () => {},
+      location: {}
+    },
+    match: {
+      params: {}
+    }
   };
 
   const props = { ...defaultProps, ...args };
-
   return render(<Board {...props} />);
 }
 
